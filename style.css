@@ -337,7 +337,7 @@ h2::after {
   border-radius: 15%;
   width: 280px;
   height: 300px;
-  object-fit: cover;
+  object-fit: fill;
   border: 2px solid #00f7ff00;
   box-shadow: 0 0 20px rgba(0, 247, 255, 0);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
