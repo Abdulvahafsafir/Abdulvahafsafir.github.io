@@ -339,15 +339,9 @@ h2::after {
   width: 230px;
   height: 300px;
   object-fit: cover;
-  border: 2px solid #00f7ff;
-  box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
-.about img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(0, 247, 255, 0.4);
-}
 
 .about .bio {
   max-width: 600px;
