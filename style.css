@@ -333,14 +333,13 @@ h2::after {
 .about:hover {
   box-shadow: 0 0 40px rgba(0, 247, 255, 0.3);
 }
-
 .about img {
   border-radius: 15%;
   width: 230px;
   height: 300px;
   object-fit: cover;
-  
 }
+
 
 
 .about .bio {
