@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Vahaf Safir M | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #0a0a0a;
+            --accent: #000000;
+            --card-bg: #f8f8f8;
+            --border: #e0e0e0;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a0a0a;
+                --text: #f0f0f0;
+                --accent: #ffffff;
+                --card-bg: #1a1a1a;
+                --border: #333333;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: floatParticle 25s linear infinite;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(100vh) scale(0.5); }
+            100% { transform: translateY(-100px) scale(1.2); }
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            nav {
+                background: rgba(10, 10, 10, 0.95);
+            }
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .glow {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.6rem;
+            margin: 1.5rem 0;
+            min-height: 60px;
+            font-weight: 400;
+            color: #555;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .hero-subtitle {
+                color: #aaa;
+            }
+        }
+
+        .hero-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 14px 36px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+        }
+
+        .hero-btn:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Rest of the styles (same as before) */
+        section {
+            padding: 100px 5%;
+        }
+
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio p {
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .bio p {
+                color: #ccc;
+            }
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border);
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .project-card h3, .project-card p {
+            padding: 1.5rem 1.5rem 0.5rem;
+        }
+
+        .project-card p {
+            color: #666;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .project-card p {
+                color: #aaa;
+            }
+        }
+
+        .project-btn {
+            display: block;
+            margin: 0 1.5rem 1.5rem;
+            padding: 10px 24px;
+            text-align: center;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .project-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cert-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            border-color: var(--accent);
+            transform: scale(1.03);
+        }
+
+        .cert-img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+        }
+
+        .resume-section {
+            background: var(--card-bg);
+            text-align: center;
+            padding: 120px 5%;
+        }
+
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .resume-btn:hover {
+            background: #222;
+            transform: translateY(-4px);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 4rem;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            background: var(--bg);
+            font-size: 1rem;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .contact-form button {
+            background: var(--accent);
+            color: white;
+            padding: 14px 36px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 80px 5% 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid #333;
+            margin-top: 3rem;
+            font-size: 0.95rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: 0.4s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .about {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation" id="bg-animation"></div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Glad you’re here!</div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Hi, I'm <span class="glow">Abdul Vahaf Safir</span></h1>
+            <p style="font-size: 1.5rem; margin-bottom: 1rem;">| Full-Stack Developer | </p>
+            <h2 class="hero-subtitle">Building digital experiences that matter</h2>
+            <a href="#projects" class="hero-btn">Discover My Work</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about">
+            <img src="images/imagessafi porofie.png.jpeg" alt="Profile Picture">
+            <div class="bio">
+                <p>Hi, I'm Abdul Vahaf Safir, a Full-Stack Developer passionate about creating modern, responsive, and user-friendly web applications. I specialize in the MERN stack and enjoy solving real-world problems through clean code, intuitive design, and continuous learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="images\a531cf050a0f506ebca514366eff0dfb.jpg" alt="Tour Booking App" class="project-img">
+                <h3>Face Recognition System</h3>
+                <p>HTML • CSS • JavaScript • Face-api.js</p>
+                <a href="#" class="project-btn"><i class="fa-solid fa-eye"></i> View Project</a>
+            </div>
+            
+            <div class="project-card">
+                <img src="images/protfolio.jpeg" alt="Portfolio Website" class="project-img">
+                <h3>Portfolio Website</h3>
+                <p>Modern UI/UX • Responsive • Clean Code</p>
+                <a href="#" class="project-btn"><i class="fa-solid fa-eye"></i> View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="cert-img">
+                <h3>Full Stack Web Development</h3>
+                <p>HTML, CSS, JavaScript, React, Node.js, MongoDB</p>
+                <span>Issued by: Microsoft</span>
+                <a href="https://coursera.org/share/323f887a2a7638b6b1b708022cc78b01" target="_blank" class="project-btn" style="margin-top:1rem;display:inline-block;">View Certificate</a>
+            </div>
+            <div class="cert-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" class="cert-img">
+                <h3>React.js Certification</h3>
+                <p>Modern React, Hooks, State Management</p>
+                <span>Issued by: IBM</span>
+                <a href="https://coursera.org/share/d7dfffeb6ecf1c1bba0a374aa8edd800" target="_blank" class="project-btn" style="margin-top:1rem;display:inline-block;">View Certificate</a>
+            </div>
+            <div class="cert-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="cert-img">
+                <h3>Python Crash Course</h3>
+                <p>Python Basics, Data Types, Functions</p>
+                <span>Issued by: Coursera</span>
+                <a href="https://coursera.org/share/9f4cda6414d3559623f76cf64ce73406" target="_blank" class="project-btn" style="margin-top:1rem;display:inline-block;">View Certificate</a>
+            </div>
+            <div class="cert-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Microsoft" class="cert-img">
+                <h3>Foundations of Coding Full-Stack</h3>
+                <p>Python Basics, Data Types, Functions</p>
+                <span>Issued by: Microsoft </span>
+                <a href="https://coursera.org/share/9f4cda6414d3559623f76cf64ce73406" target="_blank" class="project-btn" style="margin-top:1rem;display:inline-block;">View Certificate</a>
+            </div>
+        
+            <div class="cert-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="AWS" class="cert-img">
+                <h3>Amazon Web Services (AWS)</h3>
+                <p>AWS, Data Types, Functions</p>
+                <span>Issued by: AWS </span>
+                <a href="https://coursera.org/share/9f4cda6414d3559623f76cf64ce73406" target="_blank" class="project-btn" style="margin-top:1rem;display:inline-block;">View Certificate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="resume-section">
+        <div class="resume-container">
+            <h2>Download My Resume</h2>
+            <p>Get my latest resume with skills, projects, and experience.</p>
+            <a href="C:\Users\abdul\Downloads\Abdulvahafsafir.github.io-main (3)\Abdulvahafsafir.github.io-main\resume\Abdulvahafsafir_resume.pdf" class="resume-btn">
+                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p style="text-align:center; max-width:600px; margin:0 auto 3rem; font-size:1.2rem;">Let’s work together! Feel free to reach out.</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-box"><span>📍</span><p>India, Tamil Nadu</p></div>
+                <div class="info-box"><span>📧</span><p>abdulvahafsafir@gmail.com</p></div>
+                <div class="info-box"><span>📞</span><p>+91 8940521863</p></div>
+            </div>
+
+            <form id="contact-form" class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="6" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3 style="color:white; margin-bottom:1rem;">Abdul Vahaf Safir</h3>
+                <p>Full-Stack Developer </p>
+            </div>
+            <div>
+                <h4 style="margin-bottom:1rem;">Quick Links</h4>
+                <a href="#about" style="color:#ccc; display:block; margin:8px 0; text-decoration:none;">About</a>
+                <a href="#projects" style="color:#ccc; display:block; margin:8px 0; text-decoration:none;">Projects</a>
+                <a href="#certifications" style="color:#ccc; display:block; margin:8px 0; text-decoration:none;">Certifications</a>
+            </div>
+            <div>
+                <h4 style="margin-bottom:1rem;">Follow Me</h4>
+                <a href="https://github.com/Abdulvahafsafir" style="color:white; font-size:2rem; margin-right:1rem;">🐙</a>
+                <a href="https://www.linkedin.com/in/abdul-vahaf-safir/" style="color:white; font-size:2rem;">💼</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Abdul Vahaf Safir. Built with passion.
+        </div>
+    </footer>
+
+    <script>
+        // Background Particles Animation
+        function createParticles() {
+            const container = document.getElementById('bg-animation');
+            const particleCount = 60;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.animationDuration = `${Math.random() * 20 + 15}s`;
+                particle.style.animationDelay = `-${Math.random() * 25}s`;
+                particle.style.opacity = Math.random() * 0.2 + 0.08;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Mobile Menu
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Form
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Thank you! Your message has been received.");
+            this.reset();
+        });
+
+        // Initialize
+        window.onload = createParticles;
+    </script>
+</body>
+</html>
