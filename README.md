@@ -1,47 +1,84 @@
-# Abdul Vahaf Safir — Personal Portfolio
+# Abdul Vahaf Safir | Portfolio
 
-A personal React + Vite portfolio with a dark developer-focused visual style, responsive navigation, project details, education, skills, certifications, contact links, and a 3D-styled portrait with a mouse tilt interaction.
+Welcome to my personal portfolio! I'm Abdul Vahaf Safir, a Full-Stack Developer passionate about building modern, responsive, and user-friendly web applications.
 
-## Run locally (Windows PowerShell)
+## About Me
 
-Open this project folder in VS Code, then run one command at a time:
+I am a Computer Science postgraduate with an interest in frontend and full-stack development. I enjoy creating interactive websites, developing practical applications, and learning new technologies.
 
-```powershell
-npm install
-npm run dev
-```
+## Tech Stack
 
-Open the local address Vite prints (usually `http://localhost:5173`).
+* **Frontend:** React.js, JavaScript, HTML5, CSS3, Tailwind CSS
+* **Backend:** Node.js, Express.js, Flask
+* **Database:** MongoDB, MySQL
+* **Tools:** Git, GitHub, VS Code, Postman
 
-To create a production build:
+## Featured Projects
 
-```powershell
-npm run build
-npm run preview
-```
+### 1. Employee Management System
 
-## Personal details included
+A full-stack application for managing employee records, with CRUD operations, search, and login authentication.
 
-- Name: Abdul Vahaf Safir
-- Role: Full-Stack Developer
-- Education: M.Sc. Computer Science and Information Technology (CSIT), Jain University
-- Education: B.Sc. Computer Science, SRM Arts and Science College, Trichy (2024)
-- Skills: JavaScript, TypeScript, Python, Java, React, Redux, Node.js, Express, Flask, Django, MongoDB, MySQL, Git, GitHub, Postman, Jest, Mocha, Agile, REST APIs
-- Projects: AI Code Explainer, Employee Management System, Face Recognition Attendance System, Personal Portfolio Website
-- Certifications: Microsoft Full Stack foundations; AWS for Developers; IBM Software Engineering; Google Python; Meta Front-End Development; IBM Python for Data Science; Microsoft Data Structures and Algorithms
+**Technologies:** React.js, Flask, MySQL
 
-## Customize before publishing
+### 2. Face Recognition Attendance System
 
-1. In `src/App.jsx`, replace `your-email@example.com` with your real email address.
-2. Replace the LinkedIn placeholder URL with your profile URL.
-3. Add your resume PDF as `public/Abdul-Vahaf-Safir-CV.pdf` and add a link to it in the header if you want a working CV download.
-4. Replace `src/assets/hero-3d.png` with your final portrait artwork if needed.
-5. Review all education, certification, and project descriptions for accuracy before publishing.
+An automated attendance application using face detection and recognition to record attendance.
 
-## About the 3D portrait
+**Technologies:** Python, OpenCV
 
-The hero uses a rendered 3D-style image and a CSS perspective/tilt effect controlled by mouse movement. It is not a real animated Three.js character model. A true 3D character requires a model file such as `.glb` or `.gltf`.
+### 3. Personal Portfolio Website
 
-## Original template and asset note
+A responsive portfolio showcasing my skills, projects, education, and professional profile.
 
-This is a separately written personal portfolio, not a copy of the referenced creator's complete website. Do not reuse that creator's proprietary avatar or restricted assets. Use only images and models you own or are licensed to use. If adapting any code from another repository, follow that repository's license and attribution requirements.
+**Technologies:** React.js, JavaScript, HTML, CSS
+
+## Features
+
+* Responsive design for desktop and mobile
+* Modern user interface
+* Projects and technical skills showcase
+* Education and profile sections
+* Contact information
+
+## Run Locally
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Abdulvahafsafir/Abdulvahafsafir.github.io.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd Abdulvahafsafir.github.io
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Create a production build:
+
+   ```bash
+   npm run build
+   ```
+
+## Connect With Me
+
+* **GitHub:** [Abdulvahafsafir](https://github.com/Abdulvahafsafir)
+* **LinkedIn:** Add your LinkedIn profile URL here
+* **Portfolio:** Add your deployed website URL here
+
+---
+
+Thank you for visiting my portfolio!
